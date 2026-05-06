@@ -1,0 +1,25 @@
+SELECT current_user;
+SELECT database();
+show databases;
+use db_teste;
+
+
+CREATE TABLE IF NOT EXISTS photocards (
+    id INT PRIMARY KEY AUTO_INCREMENT,		-- ID único (gerado automaticamente)
+    membro VARCHAR(50) NOT NULL,                    -- Nome do membro (RM, Jin, Suga, J-Hope, Jimin, V, Jungkook)
+    era VARCHAR(100) NOT NULL,                      -- Era ou Álbum (ex: Wings, BE, Map of the Soul: 7)
+    versao VARCHAR(50) NOT NULL,                    -- Versão do card (ex: Ver. 1, No More Dream, Holográfico)
+    raridade VARCHAR(50) NOT NULL,                  -- Nível de raridade (Comum, Raro, Ultra Raro)
+    oficial VARCHAR(50) NOT NULL,          -- É oficial? (original/fanmade)
+    preco_pago DECIMAL(10, 2) NOT NULL,             -- Valor pago (ex: 85.50)
+    foto_url VARCHAR(255) NOT NULL                -- Link para a foto do card (para ver no banco)
+);
+
+INSERT INTO photocards (membro, era, versao, raridade, oficial, preco_pago, foto_url)
+VALUES ('Jungkook', 'Seven', 'Holográfico', 'Raro', 'Original', 120.00, 'https://exemplo.com/jk-holo.jpg');
+
+desc photocards;
+
+select * from photocards;
+
+
